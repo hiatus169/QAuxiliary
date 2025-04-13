@@ -14,9 +14,6 @@ on:
       - '.idea/**'
       - '!.github/workflows/**'
 
-permissions:
-  actions: write
-
 jobs:
   build:
     name: Build CI (Push)
