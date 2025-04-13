@@ -20,7 +20,7 @@ object ShowSelfMsgByLeftPlus : CommonSwitchFunctionHook() {
 
     override fun initOnce(): Boolean {
         val chatItemClass = io.github.qauxv.util.Initiator.loadClass("com.tencent.mobileqq.activity.aio.ChatItemAnimLayout")
-        XposedBridge.hookMethod(chatItemClass.declaredMethod("setFrom", Boolean::class.java), object: XC_MethodHook() {
+        XposedBridge.hookMethod(chatItemClass.getDeclaredMethod("setFrom", Boolean::class.java), object: XC_MethodHook() {
             override fun beforeHookedMethod(param: MethodHookParam) {
                 param.args[0] = false
             }
