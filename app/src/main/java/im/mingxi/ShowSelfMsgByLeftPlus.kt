@@ -10,7 +10,7 @@ import io.github.qauxv.util.xpcompat.XposedBridge
 
 @FunctionHookEntry
 @UiItemAgentEntry
-object ShowSelfMsgByLeft : CommonSwitchFunctionHook() {
+object ShowSelfMsgByLeftPlus : CommonSwitchFunctionHook() {
 
     override val name = "自己消息居左 Plus"
 
