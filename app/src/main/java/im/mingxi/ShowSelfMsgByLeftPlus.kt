@@ -19,8 +19,8 @@ object ShowSelfMsgByLeftPlus : CommonSwitchFunctionHook() {
     override val uiItemLocation: Array<String> = FunctionEntryRouter.Locations.Auxiliary.CHAT_CATEGORY
 
     override fun initOnce(): Boolean {
-        val chatItemClass = io.github.qauxv.util.Initiator.loadClass("com.tencent.mobileqq.activity.aio.ChatItemAnimLayout")
-        XposedBridge.hookMethod(chatItemClass.getDeclaredMethod("setFrom", Boolean::class.java), object: XC_MethodHook() {
+        val chatItemClass = io.github.qauxv.util.Initiator.loadClass("Lcom/tencent/mobileqq/activity/aio/ChatItemAnimLayout;")
+        XposedBridge.hookMethod(chatItemClass.getDeclaredMethod("setIsShieldTouchForItem", Boolean::class.java), object: XC_MethodHook() {
             override fun beforeHookedMethod(param: MethodHookParam) {
                 param.args[0] = false
             }
